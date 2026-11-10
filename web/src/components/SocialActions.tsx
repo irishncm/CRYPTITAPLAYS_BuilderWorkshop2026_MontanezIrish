@@ -1,4 +1,5 @@
-import { siFacebook, siInstagram, siLinkedin, siX } from '../lib/brandIcons';
+import { useState } from 'react';
+import { siLinkedin } from '../lib/brandIcons';
 import BrandIcon from './BrandIcon';
 
 function CameraIcon() {
@@ -55,6 +56,28 @@ export default function SocialActions({
   isOrbiting = false,
   onOrbitClick,
 }: SocialActionsProps) {
+  const [linkedInCopyStatus, setLinkedInCopyStatus] = useState<'copied' | 'failed' | null>(null);
+  const siteUrl = window.location.origin + window.location.pathname;
+  const linkedInCaption = `I JUST DEPLOYED MY WEB3 PROJECT!
+
+Built and deployed a Web3 app at the Cryptita Plays Builder Workshop. Big thanks to @Cryptita Plays, @GrantiX, @BingX #BingXAcademy and #WEB3gameCJCrace!
+
+${siteUrl}
+
+Learn → Build → Deploy. #Blockchain4Youth #B4HER #Web3OnCampus`;
+  const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(siteUrl)}`;
+
+  const copyLinkedInCaption = () => {
+    if (!navigator.clipboard?.writeText) {
+      setLinkedInCopyStatus('failed');
+      return;
+    }
+    void navigator.clipboard.writeText(linkedInCaption).then(
+      () => setLinkedInCopyStatus('copied'),
+      () => setLinkedInCopyStatus('failed'),
+    );
+  };
+
   const cameraDisabled = isGenerating || !onCameraClick || !canExport;
   const cameraLabel = isGenerating
     ? 'Generating builder card photo'
@@ -97,44 +120,34 @@ export default function SocialActions({
         <div className="social-actions__share-links">
           <a
             className="social-actions__link"
-            href="https://www.facebook.com/cryptitaplays"
+            href={linkedInShareUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Cryptita Plays on Facebook"
-          >
-            <BrandIcon icon={siFacebook} size={18} decorative />
-            <span className="social-actions__label">Facebook</span>
-          </a>
-          <a
-            className="social-actions__link"
-            href="https://x.com/cryptitaplays"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Cryptita Plays on X"
-          >
-            <BrandIcon icon={siX} size={18} decorative />
-            <span className="social-actions__label">X</span>
-          </a>
-          <a
-            className="social-actions__link"
-            href="https://www.linkedin.com/company/cryptitaplays/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Cryptita Plays on LinkedIn"
+            aria-label="Share your BuilderCard on LinkedIn"
+            onClick={copyLinkedInCaption}
           >
             <BrandIcon icon={siLinkedin} size={18} decorative />
             <span className="social-actions__label">LinkedIn</span>
           </a>
-          <a
-            className="social-actions__link"
-            href="https://www.instagram.com/cryptitaplays/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Cryptita Plays on Instagram"
-          >
-            <BrandIcon icon={siInstagram} size={18} decorative />
-            <span className="social-actions__label">Instagram</span>
-          </a>
+          <p className="social-actions__share-feedback">
+            Paste the copied caption in LinkedIn. Replace each @ name by selecting the Cryptita Plays, Grantix, and BingX pages from the suggestions.
+          </p>
+          {linkedInCopyStatus && (
+            <div className="social-actions__share-feedback" role="status">
+              {linkedInCopyStatus === 'copied'
+                ? 'Caption copied and ready to paste.'
+                : 'Clipboard unavailable. Copy the caption below to paste into LinkedIn.'}
+              {linkedInCopyStatus === 'failed' && (
+                <textarea
+                  aria-label="LinkedIn caption to copy"
+                  readOnly
+                  rows={5}
+                  value={linkedInCaption}
+                  onFocus={(event) => event.currentTarget.select()}
+                />
+              )}
+            </div>
+          )}
         </div>
       </section>
     </div>
