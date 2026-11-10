@@ -319,3 +319,130 @@ button {
   border-color: rgba(var(--chain-primary-rgb), 0.35);
   background: rgba(var(--chain-primary-rgb), 0.08);
 }
+
+
+/* Screenshot-matched UPHSL campus page shell */
+:root {
+  --chain-primary: #2453a0;
+  --chain-primary-rgb: 36, 83, 160;
+}
+
+html, body, #root {
+  background: #eaf1fb;
+}
+
+body {
+  color: #20395f;
+  background: #eaf1fb;
+}
+
+.app-root {
+  background: #eaf1fb;
+}
+
+.app-root::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    linear-gradient(rgba(22, 56, 111, .12), rgba(22, 56, 111, .12)),
+    url("../assets/university-of-perpetual-help-system-laguna-campus.webp") center / cover no-repeat;
+  filter: blur(3px) saturate(.9);
+  transform: scale(1.018);
+  pointer-events: none;
+}
+
+.molten-metal-container {
+  display: none !important;
+}
+
+.site-header {
+  height: 56px;
+  padding: 0 24px;
+  background: rgba(220, 234, 253, .92);
+  border-bottom: 1px solid rgba(47, 86, 149, .12);
+  box-shadow: 0 4px 18px rgba(27, 65, 128, .08);
+  backdrop-filter: blur(14px);
+}
+
+.site-header__logo {
+  height: 28px;
+  width: auto;
+  max-width: min(60vw, 280px);
+}
+
+.site-header__github {
+  color: #263e64;
+  border-color: rgba(44,84,145,.16);
+  background: rgba(255,255,255,.82);
+}
+
+.site-header__github:hover {
+  border-color: rgba(36,83,160,.4);
+  background: rgba(255,255,255,.96);
+}
+
+.site-footer {
+  min-height: 50px;
+  padding: 10px 28px 12px;
+  border-top: 1px solid rgba(51,91,150,.14);
+  background: rgba(228, 238, 251, .92);
+  backdrop-filter: blur(14px);
+}
+
+.site-footer__disclaimer {
+  max-width: 920px;
+  color: rgba(37,59,91,.72);
+}
+
+.site-footer__kicker {
+  color: rgba(37,59,91,.9);
+}
+
+.card-stage {
+  z-index: 20;
+}
+
+.social-actions {
+  width: 174px;
+  gap: 14px;
+}
+
+.social-actions__tools {
+  gap: 10px;
+}
+
+.social-actions__share {
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid rgba(39,79,142,.16);
+  border-radius: 15px;
+  color: #263f65;
+  background: rgba(247,250,255,.9);
+  box-shadow: 0 12px 28px rgba(29,66,124,.12);
+}
+
+.social-actions__share-title {
+  color: #233d66;
+  font-size: 12px;
+}
+
+.social-actions__link {
+  height: 40px;
+  padding: 0 13px;
+  color: #29466f;
+  border-color: rgba(39,79,142,.16);
+  background: rgba(255,255,255,.84);
+}
+
+.social-actions__link:hover:not(:disabled) {
+  border-color: rgba(36,83,160,.38);
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .card-stage__stack { gap: 10px; }
+  .social-actions { width: 144px; }
+  .social-actions__link { padding: 0 10px; }
+}
