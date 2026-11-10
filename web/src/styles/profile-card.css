@@ -1553,3 +1553,297 @@ opacity: 0.26;
   outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
+
+
+/* =========================================================
+   UPHSL REFERENCE DESIGN — LIGHT CAMPUS ID CARD
+   Keeps all data bindings and existing controls unchanged.
+   ========================================================= */
+
+:root {
+  --chain-primary: #2453a0;
+  --chain-primary-rgb: 36, 83, 160;
+  --blue: #2453a0;
+  --card: #f8fbff;
+  --card-2: #edf3fc;
+  --text: #1c2e4c;
+  --muted: rgba(28, 46, 76, .66);
+  --border: rgba(36, 83, 160, .14);
+}
+
+.profile-card {
+  border-radius: 30px;
+  box-shadow:
+    0 24px 58px rgba(16, 45, 96, .24),
+    0 5px 18px rgba(16, 45, 96, .12),
+    0 0 0 1px rgba(255,255,255,.75);
+}
+
+.card-side {
+  background: #f8fbff;
+}
+
+.card-front {
+  color: #1c2e4c;
+  background:
+    radial-gradient(ellipse at 84% 42%, rgba(67, 112, 183, .09), transparent 43%),
+    linear-gradient(145deg, #fff 0%, #f8fbff 70%, #edf3fc 100%);
+}
+
+.card-top {
+  height: 18%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 50px;
+  color: #fff;
+  background:
+    linear-gradient(100deg, rgba(255,255,255,.08), transparent 46%),
+    linear-gradient(110deg, #214b91 0%, #2859a6 72%, #204a8e 100%);
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  box-shadow: 0 5px 16px rgba(25, 63, 130, .14);
+}
+
+.card-top .brand {
+  min-width: 0;
+  max-width: 72%;
+}
+
+.brand h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(18px, 2.25vw, 29px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+
+.brand p {
+  margin: 6px 0 0;
+  color: rgba(255,255,255,.82);
+  font-size: clamp(10px, 1.12vw, 14px);
+  font-weight: 600;
+  letter-spacing: .095em;
+}
+
+.field-label {
+  color: #315d9f;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.field-value {
+  color: #273b5c;
+  font-size: clamp(12px, 1.18vw, 16px);
+  font-weight: 600;
+}
+
+.builder-number {
+  min-width: 105px;
+  margin-right: 108px;
+  padding-left: 22px;
+}
+
+.builder-number::before {
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,.95) 22%, rgba(255,255,255,.95) 78%, transparent);
+  opacity: .72;
+}
+
+.builder-number-label {
+  color: rgba(255,255,255,.68);
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+
+.builder-number-value strong {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.university-seal {
+  position: absolute;
+  z-index: 8;
+  top: 0;
+  right: 26px;
+  width: 84px;
+  height: 130px;
+  padding: 8px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid rgba(36,83,160,.16);
+  border-top: 0;
+  border-radius: 0 0 13px 13px;
+  box-shadow: 0 8px 22px rgba(19,53,111,.16);
+}
+
+.university-seal img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-main {
+  grid-template-columns: 25% 1fr;
+  gap: 36px;
+  padding: 4px 50px 8px;
+}
+
+.profile-photo-wrap {
+  padding: 3px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #6f91c7, #d7e4f8);
+  box-shadow:
+    0 16px 34px rgba(28, 65, 128, .19),
+    inset 0 1px rgba(255,255,255,.76);
+}
+
+.profile-photo {
+  border-radius: 15px;
+}
+
+.identity-header h1 {
+  color: #1b2c4a;
+  font-size: clamp(27px, 3.4vw, 46px);
+  font-weight: 850;
+  letter-spacing: -.04em;
+}
+
+.info-grid {
+  gap: 22px;
+}
+
+.info-field {
+  min-width: 0;
+}
+
+.skills span {
+  padding: 5px 11px;
+  border: 1px solid rgba(48, 88, 151, .16);
+  border-radius: 999px;
+  background: linear-gradient(145deg, #f6f9ff, #e7eefb);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.88);
+  color: #34527f;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.flip-btn {
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 14px 0 0 14px;
+  background: linear-gradient(135deg, #2656a1, #3476c8);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 9px 22px rgba(28, 65, 128, .24), inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+.card-bottom {
+  border: 1px solid rgba(43, 84, 148, .14);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255,255,255,.96), rgba(238,244,253,.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 8px 23px rgba(27, 65, 128, .10);
+}
+
+.credential-field {
+  padding: 12px 24px;
+}
+
+.credential-value,
+.value-row {
+  color: #314766;
+  font-size: clamp(11px, 1.15vw, 15px);
+  font-weight: 650;
+}
+
+.divider {
+  background: linear-gradient(to bottom, transparent, rgba(44,82,140,.18), transparent);
+}
+
+.value-row__link {
+  color: #314766;
+}
+
+.value-row__link:hover {
+  color: #2453a0;
+}
+
+.icon-btn {
+  color: rgba(44, 73, 116, .75);
+}
+
+.icon-btn:hover {
+  color: #2453a0;
+}
+
+.sui-link-box {
+  border: 1px solid rgba(49,93,159,.15);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(35,73,137,.08);
+}
+
+.sui-logo {
+  color: #3988f7;
+}
+
+.cryptita-deboss {
+  opacity: .15;
+}
+
+.deboss-shadow {
+  background: rgba(40,66,110,.18);
+}
+
+.deboss-highlight {
+  background: rgba(255,255,255,.82);
+}
+
+.deboss-face {
+  background: linear-gradient(145deg,rgba(72,119,184,.08),rgba(255,255,255,.18));
+}
+
+.card-bee {
+  position: absolute;
+  z-index: 7;
+  display: block;
+  font-size: 21px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 2px rgba(24,49,89,.2));
+  pointer-events: none;
+}
+
+.card-bee--one { top: 7%; left: 41%; transform: rotate(-18deg); }
+.card-bee--two { top: 70%; left: 78%; transform: rotate(15deg); }
+.card-bee--three { bottom: 10%; left: 21%; transform: rotate(-12deg); }
+
+.card-back {
+  color: #fff;
+  background: linear-gradient(135deg, #17366b, #2453a0 58%, #132d58);
+}
+
+.back-brand p,
+.back-built-on a {
+  color: #9bd7ff;
+}
+
+@media (max-width: 760px) {
+  .card-top { padding: 0 24px; }
+  .card-top .brand { max-width: 66%; }
+  .card-top .brand h2 { font-size: clamp(14px, 2vw, 20px); }
+  .builder-number { margin-right: 92px; min-width: 72px; padding-left: 12px; }
+  .university-seal { width: 72px; height: 110px; right: 18px; }
+  .card-main { padding: 4px 24px 8px; gap: 18px; }
+  .card-bottom { margin-left: 24px; margin-right: 24px; }
+  .credential-field { padding: 8px 12px; }
+  .info-grid { gap: 12px; }
+  .card-bee { font-size: 16px; }
+}
