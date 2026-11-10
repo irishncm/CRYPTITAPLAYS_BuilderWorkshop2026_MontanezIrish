@@ -1553,3 +1553,266 @@ opacity: 0.26;
   outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
+
+
+/* =========================================================
+   ALTERNATE CONCEPT: MIDNIGHT COBALT DIGITAL CREDENTIAL
+   Visual-only overrides. Profile data and behavior stay intact.
+   ========================================================= */
+
+:root {
+  --chain-primary: #63d5ff;
+  --chain-primary-rgb: 99, 213, 255;
+  --blue: #63d5ff;
+  --card: #0c1930;
+  --card-2: #101f3a;
+  --text: #f4f8ff;
+  --muted: rgba(226, 238, 255, .68);
+  --border: rgba(105, 196, 255, .2);
+}
+
+.profile-card {
+  border-radius: 26px;
+  box-shadow:
+    0 32px 80px rgba(0, 8, 24, .58),
+    0 0 0 1px rgba(115, 211, 255, .26),
+    0 0 42px rgba(35, 155, 255, .12);
+}
+
+.card-side {
+  background: #0c1930;
+}
+
+.card-front {
+  color: #f2f7ff;
+  background:
+    radial-gradient(ellipse at 83% 35%, rgba(45, 132, 206, .2), transparent 45%),
+    linear-gradient(135deg, #0b1730 0%, #102344 52%, #0c1b35 100%);
+}
+
+.card-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .28;
+  background:
+    linear-gradient(115deg, transparent 0 48%, rgba(93, 197, 255, .08) 48.2% 48.5%, transparent 48.7%),
+    repeating-linear-gradient(0deg, transparent 0 39px, rgba(142, 203, 255, .045) 40px, transparent 41px);
+}
+
+.card-front::after {
+  height: 4px;
+  background: linear-gradient(90deg, #3b8eff, #72edff 48%, #347dff);
+  box-shadow: 0 0 18px rgba(99, 213, 255, .46);
+}
+
+.card-top {
+  background:
+    linear-gradient(100deg, rgba(255,255,255,.04), transparent 45%),
+    linear-gradient(110deg, #132e57, #174a80 68%, #11355e);
+  box-shadow: 0 8px 24px rgba(0, 8, 24, .2);
+  border-bottom: 1px solid rgba(137, 221, 255, .18);
+}
+
+.brand h2 {
+  color: #f5f9ff;
+  text-shadow: 0 2px 18px rgba(75, 181, 255, .18);
+}
+
+.brand p {
+  color: #9bdfff;
+}
+
+.field-label,
+.builder-number-label {
+  color: #80cfff;
+}
+
+.field-value,
+.credential-value,
+.value-row {
+  color: rgba(240, 247, 255, .92);
+}
+
+.builder-number::before {
+  background: linear-gradient(to bottom, transparent, #6cdcff 25%, #6cdcff 75%, transparent);
+}
+
+.builder-number-label {
+  color: rgba(196, 224, 255, .62);
+}
+
+.builder-number-value strong {
+  color: #fff;
+  text-shadow: 0 0 18px rgba(99, 213, 255, .18);
+}
+
+.builder-status-dot {
+  box-shadow: 0 0 0 3px rgba(255,255,255,.04);
+}
+
+.profile-photo-wrap {
+  padding: 3px;
+  border-radius: 19px;
+  background: linear-gradient(145deg, #9cecff, #398bdb 48%, #193c70);
+  box-shadow:
+    0 18px 38px rgba(0, 7, 22, .42),
+    0 0 0 1px rgba(111, 207, 255, .3);
+}
+
+.profile-photo {
+  border-radius: 16px;
+}
+
+.identity-header h1 {
+  color: #f7fbff;
+  text-shadow: 0 3px 24px rgba(38, 142, 230, .18);
+}
+
+.info-grid {
+  gap: 20px;
+}
+
+.info-field {
+  padding-top: 7px;
+  border-top: 1px solid rgba(120, 191, 255, .15);
+}
+
+.wide-field {
+  padding-top: 7px;
+  border-top: 1px solid rgba(120, 191, 255, .15);
+}
+
+.skills span {
+  border: 1px solid rgba(104, 199, 255, .28);
+  background: linear-gradient(145deg, rgba(58, 132, 202, .24), rgba(22, 54, 94, .5));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  color: #c4edff;
+}
+
+.skills__placeholder {
+  color: rgba(232, 243, 255, .55);
+}
+
+.flip-btn {
+  border: 1px solid rgba(182, 237, 255, .3);
+  border-radius: 13px 0 0 13px;
+  background: linear-gradient(135deg, #227ad4, #27b5d9);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 750;
+  box-shadow:
+    0 12px 28px rgba(0, 8, 24, .32),
+    inset 0 1px 0 rgba(255,255,255,.28),
+    0 0 18px rgba(39, 181, 217, .15);
+}
+
+.card-bottom {
+  border: 1px solid rgba(111, 199, 255, .22);
+  border-radius: 15px;
+  background:
+    linear-gradient(145deg, rgba(30, 62, 103, .84), rgba(9, 24, 48, .96));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 -3px 8px rgba(0,0,0,.2),
+    0 12px 28px rgba(0, 7, 22, .2);
+}
+
+.credential-field {
+  padding: 12px 20px;
+}
+
+.divider {
+  background: linear-gradient(to bottom, transparent, rgba(129, 206, 255, .26), transparent);
+}
+
+.value-row__link {
+  color: #eef8ff;
+}
+
+.value-row__link:hover {
+  color: #75e4ff;
+}
+
+.icon-btn {
+  color: rgba(208, 235, 255, .78);
+}
+
+.icon-btn:hover {
+  color: #79e4ff;
+}
+
+.sui-link-box {
+  border: 1px solid rgba(117, 207, 255, .25);
+  border-radius: 13px;
+  background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(16,45,78,.6));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 7px 16px rgba(0,0,0,.2);
+}
+
+.sui-logo {
+  color: #71dcff;
+}
+
+.cryptita-deboss {
+  opacity: .16;
+}
+
+.deboss-shadow {
+  background: rgba(0, 0, 0, .6);
+}
+
+.deboss-highlight {
+  background: rgba(121, 222, 255, .18);
+}
+
+.deboss-face {
+  background: linear-gradient(145deg, rgba(65, 156, 220, .22), rgba(4, 17, 37, .3));
+}
+
+.card-back {
+  color: #f3f8ff;
+  background:
+    radial-gradient(ellipse at 78% 20%, rgba(44, 158, 230, .22), transparent 48%),
+    linear-gradient(135deg, #0a1730, #123b69 58%, #081326);
+}
+
+.back-brand h2 {
+  color: #fff;
+}
+
+.back-brand p,
+.back-built-on a {
+  color: #80dcff;
+}
+
+.back-divider {
+  background: linear-gradient(to right, transparent, rgba(112, 213, 255, .36), rgba(255,255,255,.1), rgba(112,213,255,.36), transparent);
+}
+
+.community-title {
+  color: rgba(239, 247, 255, .82);
+}
+
+.community-partner {
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.2));
+}
+
+.card-status--error {
+  color: #ff9eae;
+}
+
+.icon-btn:focus-visible,
+.flip-btn:focus-visible,
+.sui-link-box:focus-visible,
+.community-partner:focus-visible,
+.value-row__link:focus-visible {
+  outline: 2px solid #79e4ff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .info-grid { gap: 11px; }
+  .info-field, .wide-field { padding-top: 5px; }
+  .credential-field { padding: 7px 10px; }
+}
