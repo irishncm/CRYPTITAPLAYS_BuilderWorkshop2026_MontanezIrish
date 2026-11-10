@@ -70,8 +70,8 @@ export function CardFrontFace({
 
       <div className="card-top">
         <div className="brand">
-          <h2>University of Perpetual Help System Laguna</h2>
-          <p>CRYPTITA PLAYS BUILDER WORKSHOP 2026</p>
+          <h2>CRYPTITA PLAYS</h2>
+          <p>BUILDER WORKSHOP 2026</p>
         </div>
         <div className="builder-number">
           <span className="builder-number-label">BUILDER NO.</span>
